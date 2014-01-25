@@ -12,6 +12,7 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @step = @list.steps.build
+    @steps = @list.steps.order("created_at asc")
   end
 
   # GET /lists/new

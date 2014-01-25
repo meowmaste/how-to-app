@@ -5,7 +5,7 @@ class StepsController < ApplicationController
   # GET /steps.json
   def index
     @list = List.find(params[:list_id])
-    @steps = Step.all
+    @steps = @list.steps 
   end
 
   # GET /steps/1
@@ -28,8 +28,8 @@ class StepsController < ApplicationController
   # POST /steps
   # POST /steps.json
   def create
-    @step = Step.new(step_params.merge(list_id: params[:list_id]))
     @list = List.find(params[:list_id])
+    @step = @list.steps.new(step_params)
 
     respond_to do |format|
       if @step.save

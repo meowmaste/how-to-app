@@ -2,5 +2,5 @@
 
 <%= @step.title %>
 
-<%= link_to 'Edit', edit_step_path(@step) %> |
-<%= link_to 'Back', steps_path %>
+<%= link_to 'Edit', edit_list_step_path(list: @list, step: @step) %> |
+<%= link_to 'Back', list_path(@list) %>

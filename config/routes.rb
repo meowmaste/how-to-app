@@ -1,5 +1,4 @@
 Howtoapp::Application.routes.draw do
-  resources :steps
 
   resources :lists do
     resources :steps
